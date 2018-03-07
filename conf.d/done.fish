@@ -59,7 +59,10 @@ and test -n __done_get_window_id  # is able to get window id
 			set -l message "$history[1]"
 
 			if test $exit_status -ne 0
+				afplay /System/Library/Sounds/Basso.aiff
 				set title "Exited ($exit_status) after $duration"
+			else
+				afplay /System/Library/Sounds/Ping.aiff
 			end
 
 			if type -q terminal-notifier  # https://github.com/julienXX/terminal-notifier
