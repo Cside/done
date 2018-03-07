@@ -58,6 +58,8 @@ and test -n __done_get_window_id  # is able to get window id
 			set -l title "Done in $duration"
 			set -l message "$history[1]"
 
+			# TODO:
+			# Optionize sound files and exec command
 			if test $exit_status -ne 0
 				afplay /System/Library/Sounds/Basso.aiff
 				set title "Exited ($exit_status) after $duration"
@@ -77,9 +79,7 @@ and test -n __done_get_window_id  # is able to get window id
 			else  # anything else
 				echo -e "\a" # bell sound
 			end
-
 		end
 	end
-
 end
 
